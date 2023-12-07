@@ -1,0 +1,15 @@
+public class SpinWords {
+
+  public String spinWords(String sentence) {
+    StringBuilder resultado=new StringBuilder();
+    String[] words=sentence.split(" ");
+    for(String w : words){
+      if(w.length()>=5){
+        resultado.append(new StringBuilder(w).reverse().append(" "));
+      }else{
+        resultado.append(w).append(" ");
+      }
+    }
+    return resultado.toString().trim();
+  }
+}
