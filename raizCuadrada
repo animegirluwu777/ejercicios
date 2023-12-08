@@ -1,0 +1,36 @@
+public class SquareDigit {
+
+  public int squareDigits(int n) {
+    StringBuilder result=new StringBuilder();
+    if(n==0){
+      return 0;
+    }
+    while (n > 0) {
+      int digit = n % 10;
+      int squaredDigit = digit * digit;
+      result.insert(0, squaredDigit);  
+      n /= 10;
+    }
+    return Integer.parseInt(result.toString());
+  }
+
+}
+
+//otra cosa bastante mal hecha, esta vez por inutil, hay un metodo de string llamado valueof y con eo hubiese sido mas sencillo
+
+public class SquareDigit {
+
+  public int squareDigits(int n) {
+  
+    String strDigits = String.valueOf(n);    
+    String result = "";
+    
+    for (char c : strDigits.toCharArray()) {
+      int digit = Character.digit(c, 10);
+      result += digit * digit;
+    }
+    
+    return Integer.parseInt(result);
+  }
+
+}
