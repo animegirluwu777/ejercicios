@@ -1,0 +1,22 @@
+public class Troll {
+    public static String disemvowel(String str) {
+      StringBuilder result=new StringBuilder();
+      for(char c : str.toCharArray()){
+        if(!vocal(c)){
+          result.append(c);
+        }
+      }
+      return result.toString();
+    }
+  public static boolean vocal(char c){
+    return "aeiouAEIOU".indexOf(c)!=-1;
+  }
+}
+
+//asi se hace mucho mas limpio, pense en hacerlo cuand0 estaba haciendolo pero me dio or hacerlo con un for y asi fue
+
+public class Troll {
+    public static String disemvowel(String Z) {
+        return Z.replaceAll("(?i)[aeiou]" , "");  //el (?i) sirve para distinguir entrre minus y mayus
+    }
+}
