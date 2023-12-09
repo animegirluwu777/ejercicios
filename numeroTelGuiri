@@ -1,0 +1,18 @@
+public class Kata {
+  public static String createPhoneNumber(int[] numbers) {
+    StringBuilder numero=new StringBuilder();
+    if(numbers.length==10){
+      for(int i : numbers){
+        if(i<10){
+          numero.append(i);
+        }else{
+            System.out.println("Numero muy alto, espabila loquete");
+        }
+      }
+    }else{
+        System.out.println("Formato incorrecto, espabila loquete");
+    }
+    numero.insert(0, '(').insert(4, ')').insert(5, " ").insert(9, '-');
+    return numero.toString();
+  }
+}
