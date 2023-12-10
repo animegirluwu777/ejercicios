@@ -1,8 +1,12 @@
 public class SpinWords {
 
   public String spinWords(String sentence) {
+//creo el stringbuilder vacio
     StringBuilder resultado=new StringBuilder();
+//divido la frase metiendo cada palabra en una posicion diferente del array cada vez que haya un espacio
     String[] words=sentence.split(" ");
+//con un bucle recorro el array palabra por palabra, compruebo la longitud de la misma, si tiene menos de 4 palabras, le añado a resultado la palabra normal
+//y si tiene 5 o mas letras le doy la vuelta
     for(String w : words){
       if(w.length()>=5){
         resultado.append(new StringBuilder(w).reverse().append(" "));
@@ -10,6 +14,7 @@ public class SpinWords {
         resultado.append(w).append(" ");
       }
     }
+//lo convierto a string ya que el metodo tiene que devolver un string y solo por si acaso le quito si hay espacios en los extremos
     return resultado.toString().trim();
   }
 }
