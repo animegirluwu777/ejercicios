@@ -1,0 +1,13 @@
+public class DRoot {
+  public static int digital_root(int n) {
+    int sum = 0;
+    if (n < 10) return n;
+    else {
+      while(n > 0) {
+        sum += n%10; //lo que hacen estas dos lineas es n%10= quitar el ultimo digito de n(en el aso que tenga mas de un digito) y lo suma a sum y asi hasta que no quede nada en n
+        n /= 10; //en caso de que sigan habiendo mas de un digito tras haberlo sumado, se repite el proceso (digital_root(sum))
+      }
+    }
+    return digital_root(sum);
+  }
+}
