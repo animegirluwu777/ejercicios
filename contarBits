@@ -1,0 +1,27 @@
+public class BitCounting {
+
+	public static int countBits(int n){
+		int count=0;
+    String binaryString=Integer.toBinaryString(n);
+    for(char c : binaryString.toCharArray()){
+      if(c=='1'){
+        count++;
+      }else{
+        System.out.println("hola");
+      }
+    }
+    return count;
+	}
+	
+}
+
+//tambien se puede hacer asi, y mas facil ademas (no conocia el metodo)
+
+public class BitCounting {
+
+	public static int countBits(int n){
+		
+    return Integer.bitCount(n);
+	}
+	
+}
