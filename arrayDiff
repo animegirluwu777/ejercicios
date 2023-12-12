@@ -1,0 +1,25 @@
+public class Nigger {
+
+  public static int[] arrayDiff(int[] a, int[] b) {
+    int[] array=new int[a.length];
+    int count=0;
+    
+    for(int i=0; i<a.length; i++){
+     boolean found=false;
+      for(int j=0; j<b.length; j++){
+        if(a[i]==b[j]){
+          found=true;
+          break;
+        }
+      }
+      if(!found){
+        array[count]=a[i];
+        count++;
+      }
+    }
+    int[] finalArray=new int[count];
+    System.arraycopy(array,0,finalArray,0,count);
+    return finalArray;
+  }
+
+}
