@@ -1,0 +1,57 @@
+package paquetepruebas;
+
+import java.util.Scanner;
+
+public class calculadora {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int num1;
+        int num2;
+        try {
+            String operacion= in.next();
+            String[] operandome=operacion.split("[\\+\\-\\*\\/]");
+            num1=Integer.parseInt(operandome[0]);
+            num2=Integer.parseInt(operandome[1]);
+            String operador=operacion.replaceAll("[0-9]","");
+            if (operador.equals("+")){
+                suma(num1,num2);
+            } else if (operador.equals("-")) {
+                resta(num1,num2);
+            } else if (operador.equals("*")) {
+                multiplicacion(num1,num2);
+            } else if (operador.equals("/")) {
+                division(num1,num2);
+            }else {
+                System.out.println("Soy muy tonto y aun no he añadido mas operaciones ni que se puedan realizar operaciones de mas de 2 operandos :p");
+            }
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Introduce minimo dos operandos");
+        }catch (ArithmeticException e){
+            System.out.println("No se puede dividir entre 0, maquina");
+        }
+    }
+
+    public static void suma(int numero1, int numero2){
+        int resultadoSuma=numero1+numero2;
+        System.out.println(resultadoSuma);
+    }
+
+    public static void resta(int numero1, int numero2){
+        int resultadoResta=numero1-numero2;
+        System.out.println(resultadoResta);
+    }
+
+    public static void multiplicacion(int numero1, int numero2){
+        int resultadonMultiplicacion=numero1*numero2;
+        System.out.println(resultadonMultiplicacion);
+    }
+
+    public static void division(int numero1, int numero2) {
+        if (numero1==0){
+            System.out.println("No se puede realizar esta operacion");
+        }else{
+        int resultadoDivision=numero1/numero2;
+        System.out.println(resultadoDivision);
+        }
+    }
+}
